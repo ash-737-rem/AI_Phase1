@@ -1,0 +1,17 @@
+import numpy as np 
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+%matplotlib inline
+import seaborn as sns
+import warnings
+warnings.filterwarnings("ignore")
+from pandas.plotting import lag_plot
+from pylab import rcParams
+from statsmodels.tsa.seasonal import seasonal_decompose
+from pandas import DataFrame
+from pandas import concat
+
+df=pd.read_csv("../input/hourly-energy-consumption/AEP_hourly.csv",index_col='Datetime',parse_dates=True)
+df.head()
+
