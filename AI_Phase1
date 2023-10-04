@@ -78,15 +78,24 @@ df.plot(title="PJME Energy use in MegaWatts",
         color=sns.color_palette()[0])
 
 plt.show()
+__results___8_0 
 
 
 df.tail()
+
+Datetime          	AEP_MW	Month	Year	Date	       Hour	Week	Day
+							
+2018-08-02 20:00:00	17673.0	8	2018	2018-08-02	20	31	Thursday
+2018-08-02 21:00:00	17303.0	8	2018	2018-08-02	21	31	Thursday
+2018-08-02 22:00:00	17001.0	8	2018	2018-08-02	22	31	Thursday
+2018-08-02 23:00:00	15964.0	8	2018	2018-08-02	23	31	Thursday
+2018-08-03 00:00:00	14809.0	8	2018	2018-08-03	0	31	Friday
 
 
 from pandas.plotting import autocorrelation_plot
 autocorrelation_plot(df['AEP_MW'])
 plt.show()
-
+__results___10_0 
 
 
  
@@ -136,6 +145,8 @@ plt.plot(df['AEP_MW'].tail(600), 'green', label='Train data')
 plt.plot(test_data['AEP_MW'], 'blue', label='Test data')
 plt.legend()
 
+__results___14_1 
+
 
 mean_value = df['AEP_MW'].mean() # calculation of mean price
 
@@ -160,6 +171,10 @@ plt.legend()
 print('MSE: '+str(mean_squared_error(test_data['AEP_MW'], np.full(len(test_data), mean_value))))
 print('MAE: '+str(mean_absolute_error(test_data['AEP_MW'], np.full(len(test_data), mean_value))))
 print('RMSE: '+str(sqrt(mean_squared_error(test_data['AEP_MW'], np.full(len(test_data), mean_value)))))
+
+__results___15_1 
+__results___15_2 
+
 
 
 from statsmodels.tsa.stattools import adfuller
@@ -234,6 +249,9 @@ plt.show()
 print('MSE: '+str(mean_squared_error(y, predictions)))
 print('MAE: '+str(mean_absolute_error(y, predictions)))
 print('RMSE: '+str(sqrt(mean_squared_error(y, predictions))))
+
+__results___19_0 
+__results___19_1 
 
 
 
